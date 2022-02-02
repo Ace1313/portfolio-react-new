@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import backgroundImage from '../assets/background.png';
+import reactIcon from '../assets/react.png';
+import javascriptIcon from '../assets/javascript.png';
+import htmlIcon from '../assets/html5.png';
+import cssIcon from '../assets/css-3.png';
 
 function LandingPage() {
    return (
@@ -8,7 +12,14 @@ function LandingPage() {
             [ <span className="a_letter">A</span>LEKSANDER CADJO ]
          </h1>
          <h1 className="developer_text"> {'{FRONT-END WEB DEVELOPER}'} </h1>
-         <h2>React . JavaScript . HTML . CSS . NODE.js</h2>
+         <h2 className="skills_text">React . JavaScript . HTML . CSS . NODE.js</h2>
+         <div className="skills_icons">
+            <img src={reactIcon} />
+            <img src={javascriptIcon} />
+            <img src={htmlIcon} />
+            <img src={cssIcon} />
+            <img src={htmlIcon} />
+         </div>
          <button>PROJECTS</button>
       </LandinPageWrapper>
    );
@@ -18,7 +29,7 @@ const LandinPageWrapper = styled.div`
    background-image: url(${backgroundImage});
    height: 80vh;
    display: grid;
-   grid-template-rows: 150px 100px 110px 150px;
+   grid-template-rows: 180px 100px 50px 150px 100px;
    justify-content: center;
    justify-items: center;
    width: 50%;
@@ -28,6 +39,23 @@ const LandinPageWrapper = styled.div`
    background-repeat: no-repeat;
    background-position: center;
    opacity: 0.8;
+
+   .skills_text {
+      letter-spacing: 6px;
+      font-size: 32px;
+   }
+
+   .skills_icons {
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      padding: 0 5rem 0 5rem;
+   }
+
+   img {
+      height: 25px;
+      width: 25px;
+   }
 
    .developer_text {
       font-size: 55px;
@@ -75,9 +103,19 @@ const LandinPageWrapper = styled.div`
 
    button {
       border-radius: 10px;
-      height: 5rem;
-      width: 5rem;
+      height: 4rem;
+      width: 9rem;
       background-color: purple;
+      border: 2px solid white;
+      cursor: pointer;
+      transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+   }
+
+   button:hover {
+      background-color: aquamarine;
+      transition: all 0.5s ease-in-out;
+      border-color: transparent;
+      transform: translateY(-3px);
    }
 
    @media screen and (max-width: 600px) {
@@ -88,8 +126,19 @@ const LandinPageWrapper = styled.div`
          font-weight: bolder;
       }
       .name_text {
-         font-size: 20px;
+         font-size: 24px;
          font-weight: bolder;
+         text-align: center;
+         letter-spacing: 2px;
+      }
+      .skills_text {
+         font-size: 18px;
+         letter-spacing: 2px;
+      }
+      .skills_icons {
+         display: none;
+      }
+      button {
       }
    }
 `;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function Navbar() {
    return (
       <NavbarWrapper>
-         <h1>LOGO</h1>
+         <h1> {'{<>}'} </h1>
          <NavbarLinks />
       </NavbarWrapper>
    );
