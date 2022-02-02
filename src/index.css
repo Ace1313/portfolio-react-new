@@ -5,12 +5,10 @@
 }
 
 body {
-   background: rgb(25, 27, 59);
-   background: radial-gradient(
-      circle,
-      rgba(25, 27, 59, 1) 0%,
-      rgba(45, 47, 92, 1) 100%
-   );
+   background: #3a4fda;
+   background: -webkit-linear-gradient(bottom right, #2034b3, #18051c);
+   background: -moz-linear-gradient(bottom right, #2034b3, #18051c);
+   background: linear-gradient(to top left, #1c2b8f, #200725);
    background-repeat: no-repeat;
    height: 100vh;
 }
