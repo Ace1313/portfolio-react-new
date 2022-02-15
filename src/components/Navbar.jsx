@@ -21,7 +21,7 @@ const NavbarWrapper = styled.div`
    display: flex;
    align-items: center;
    justify-content: space-between;
-   background-color: paleturquoise;
+   background-color: #091f1f;
    padding: 1rem;
 
    .link {
