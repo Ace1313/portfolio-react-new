@@ -4,8 +4,16 @@ import reactIcon from '../assets/react.png';
 import javascriptIcon from '../assets/javascript.png';
 import htmlIcon from '../assets/html5.png';
 import cssIcon from '../assets/css-3.png';
+import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 function LandingPage() {
+   let navigate = useNavigate();
+
+   function projectsHandler() {
+      navigate('/projects');
+   }
+
    return (
       <LandinPageWrapper>
          <h1 className="name_text">
@@ -20,7 +28,7 @@ function LandingPage() {
             <img src={cssIcon} />
             <img src={htmlIcon} />
          </div>
-         <button>PROJECTS</button>
+         <button onClick={projectsHandler}>PROJECTS</button>
       </LandinPageWrapper>
    );
 }
@@ -45,11 +53,15 @@ const LandinPageWrapper = styled.div`
       font-size: 32px;
    }
 
+   h2 {
+      color: whitesmoke;
+   }
+
    .skills_icons {
       width: 100%;
       justify-content: space-between;
       display: flex;
-      padding: 0 5rem 0 5rem;
+      padding: 0.5rem 5rem 0.5rem 5rem;
    }
 
    img {
