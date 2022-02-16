@@ -11,4 +11,5 @@ body {
    background: linear-gradient(to top left, #1c2b8f, #200725);
    background-repeat: no-repeat;
    height: 100vh;
+   scroll-behavior: smooth;
 }

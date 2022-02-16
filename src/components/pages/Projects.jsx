@@ -1,17 +1,26 @@
 import styled from 'styled-components';
-import ljudio from '../../assets/ljudio.png';
+import projects from '../../assets/projects.jpg';
 import { projectObjects } from '../../projectData';
+import { AiOutlineArrowDown } from 'react-icons/ai';
 
 function Projects() {
    console.log(projectObjects);
    return (
       <Wrapper>
-         <section className="testar">
+         <section className="container">
+            <img className="project_background" src={projects} alt="" />
+            <a className="arrow" href="#projectsLink">
+               <AiOutlineArrowDown className="arrow" />
+            </a>
             {projectObjects.map((item) => (
-               <main className={`test test${item.id}`} key={item.id}>
+               <main
+                  id="projectsLink"
+                  className={`main_card card_container${item.id}`}
+                  key={item.id}
+               >
                   <article className="card">
                      <div className="card_image">
-                        <img src={item.img} alt="test" />
+                        <img className="project_img" src={item.img} alt="test" />
                      </div>
                   </article>
                   <article>
@@ -26,28 +35,60 @@ function Projects() {
 }
 
 const Wrapper = styled.div`
-   .testar {
+   .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
       background: #3a4fda;
       background: -webkit-linear-gradient(bottom right, #2034b3, #18051c);
       background: -moz-linear-gradient(bottom right, #2034b3, #18051c);
       background: linear-gradient(to top left, #1c2b8f, #200725);
       background-repeat: no-repeat;
+      scroll-behavior: smooth;
    }
 
-   .test {
+   .arrow {
+      color: white;
+      font-size: 7.5rem;
+      position: absolute;
+      justify-self: center;
+      margin-top: 23.4rem;
+      background: orange;
+      border-radius: 50%;
+      opacity: 0.7;
+   }
+
+   .arrow:hover {
+      opacity: 1;
+   }
+
+   .project_background {
+      height: 70%;
+      width: 100%;
+      object-fit: cover;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      border-radius: 50%;
       padding: 2rem;
+      box-shadow: 0 20px 50px rgba(240, 46, 170, 0.7);
    }
 
-   .test1 {
-      grid-row-start: 4;
+   .main_card {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
    }
 
-   .test2 {
+   .card_container1 {
       grid-row-start: 2;
+   }
+
+   .card_container2 {
+      grid-row-start: 3;
       grid-column-start: 2;
+   }
+   .card_container3 {
+      grid-row-start: 4;
    }
 
    .card {
@@ -66,7 +107,7 @@ const Wrapper = styled.div`
       border-radius: 40px;
    }
 
-   img {
+   .project_img {
       width: inherit;
       height: inherit;
       border-radius: 40px;
@@ -96,18 +137,24 @@ const Wrapper = styled.div`
    }
 
    @media all and (max-width: 400px) {
-      .testar {
+      .container {
          display: grid;
          grid-template-rows: 1fr 1fr 1fr;
-         grid-template-columns: auto;
       }
-      .test2 {
+      .main_card {
+         display: flex;
+         flex-direction: column;
+      }
+      .card_container1 {
+         grid-column-start: 1;
+         grid-row-start: 1;
+      }
+      .card_container2 {
          grid-column-start: 1;
          grid-row-start: 2;
       }
-      .test1 {
-         grid-column-start: 1;
-         grid-row-start: 3;
+      .arrow {
+         display: none;
       }
    }
 `;
