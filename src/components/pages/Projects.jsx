@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import projects from '../../assets/projects.jpg';
 import { projectObjects } from '../../projectData';
 import { AiOutlineArrowDown } from 'react-icons/ai';
+import { BsGithub } from 'react-icons/bs';
 
 function Projects() {
-   console.log(projectObjects);
    return (
       <Wrapper>
          <section className="container">
@@ -23,9 +23,14 @@ function Projects() {
                         <img className="project_img" src={item.img} alt="test" />
                      </div>
                   </article>
-                  <article>
-                     <h3> {item.techStack} </h3>
+                  <article className="tech">
+                     <h2> {item.techStack.join(' - ')} </h2>
                      <p>{item.decsription}</p>
+                     <div className="links">
+                        <a className="git" href={item.url}>
+                           {<BsGithub />}
+                        </a>
+                     </div>
                   </article>
                </main>
             ))}
@@ -44,7 +49,37 @@ const Wrapper = styled.div`
       background: -moz-linear-gradient(bottom right, #2034b3, #18051c);
       background: linear-gradient(to top left, #1c2b8f, #200725);
       background-repeat: no-repeat;
-      scroll-behavior: smooth;
+   }
+
+   .tech {
+      display: grid;
+   }
+
+   p {
+      word-wrap: break-word;
+      width: 80%;
+      text-align: center;
+      justify-self: center;
+   }
+
+   .git {
+      color: black;
+   }
+
+   .links {
+      justify-self: center;
+      font-size: 55px;
+      transition: all 0.2s ease-in-out;
+      height: 0%;
+   }
+
+   .links:hover {
+      transform: scale(1.2);
+   }
+
+   .git:hover {
+      color: white;
+      cursor: pointer;
    }
 
    .arrow {
@@ -52,14 +87,16 @@ const Wrapper = styled.div`
       font-size: 7.5rem;
       position: absolute;
       justify-self: center;
-      margin-top: 23.4rem;
+      margin-top: 22.8rem;
       background: orange;
       border-radius: 50%;
       opacity: 0.7;
+      transition: transform 750ms;
    }
 
    .arrow:hover {
       opacity: 1;
+      transform: translateY(10px);
    }
 
    .project_background {
@@ -77,6 +114,7 @@ const Wrapper = styled.div`
       padding: 2rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 355px 355px;
    }
 
    .card_container1 {
@@ -97,7 +135,6 @@ const Wrapper = styled.div`
       border-radius: 40px;
       box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
          -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
-      cursor: pointer;
       transition: 0.4s;
    }
 
@@ -145,13 +182,19 @@ const Wrapper = styled.div`
          display: flex;
          flex-direction: column;
       }
-      .card_container1 {
+
+      .project_background {
          grid-column-start: 1;
          grid-row-start: 1;
+         padding: 1rem;
+      }
+      .card_container1 {
+         grid-column-start: 1;
+         grid-row-start: 2;
       }
       .card_container2 {
          grid-column-start: 1;
-         grid-row-start: 2;
+         grid-row-start: 3;
       }
       .arrow {
          display: none;
