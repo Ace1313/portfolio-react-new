@@ -31,6 +31,7 @@ function Projects() {
                            {<BsGithub />}
                         </a>
                      </div>
+                     <span>Click link to see Github</span>
                   </article>
                </main>
             ))}
@@ -43,16 +44,21 @@ const Wrapper = styled.div`
    .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 480px 480px 480px;
       background: #3a4fda;
       background: -webkit-linear-gradient(bottom right, #2034b3, #18051c);
       background: -moz-linear-gradient(bottom right, #2034b3, #18051c);
       background: linear-gradient(to top left, #1c2b8f, #200725);
-      background-repeat: no-repeat;
+      padding: 0.5rem;
+   }
+
+   span {
+      text-align: center;
    }
 
    .tech {
       display: grid;
+      justify-items: center;
    }
 
    p {
@@ -66,6 +72,11 @@ const Wrapper = styled.div`
       color: black;
    }
 
+   .git:hover {
+      color: white;
+      cursor: pointer;
+   }
+
    .links {
       justify-self: center;
       font-size: 55px;
@@ -75,11 +86,6 @@ const Wrapper = styled.div`
 
    .links:hover {
       transform: scale(1.2);
-   }
-
-   .git:hover {
-      color: white;
-      cursor: pointer;
    }
 
    .arrow {
@@ -115,6 +121,14 @@ const Wrapper = styled.div`
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 355px 355px;
+      border: 2px solid;
+      border-color: #ff6348;
+      background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      background: -moz-linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      background: linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      justify-items: center;
    }
 
    .card_container1 {
@@ -154,7 +168,6 @@ const Wrapper = styled.div`
    .card .card_title {
       text-align: center;
       border-radius: 0px 0px 40px 40px;
-      font-family: sans-serif;
       font-weight: bold;
       font-size: 30px;
    }
@@ -177,6 +190,7 @@ const Wrapper = styled.div`
       .container {
          display: grid;
          grid-template-rows: 1fr 1fr 1fr;
+         padding: 0rem;
       }
       .main_card {
          display: flex;

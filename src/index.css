@@ -13,3 +13,19 @@ body {
    height: 100vh;
    scroll-behavior: smooth;
 }
+
+body::-webkit-scrollbar {
+   width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+   background: #ff6348;
+   background: -webkit-linear-gradient(to right, #1c2b8f 0%, #18051c 100%);
+   background: -moz-linear-gradient(to right, #2034b3 0%, #18051c 100%);
+   background: linear-gradient(to right, #2034b3 0%, #200725 100%);
+}
+
+body::-webkit-scrollbar-thumb {
+   border-radius: 10px; /* roundness of the scroll thumb */
+   border: 3px solid orange; /* creates padding around scroll thumb */
+}
