@@ -3,10 +3,13 @@ import projects from '../../assets/projects.jpg';
 import { projectObjects } from '../../projectData';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
+import naruto from '../../assets/naruto.jpg';
+import Navbar from '../Navbar';
 
 function Projects() {
    return (
       <Wrapper>
+         <Navbar />
          <section className="container">
             <img className="project_background" src={projects} alt="" />
             <a className="arrow" href="#projectsLink">
@@ -27,7 +30,7 @@ function Projects() {
                      <h2> {item.techStack.join(' - ')} </h2>
                      <p>{item.decsription}</p>
                      <div className="links">
-                        <a className="git" href={item.url}>
+                        <a className="git" target="_blank" href={item.url}>
                            {<BsGithub />}
                         </a>
                      </div>
@@ -35,6 +38,7 @@ function Projects() {
                   </article>
                </main>
             ))}
+            {/* <div className="test"></div> */}
          </section>
       </Wrapper>
    );
@@ -51,6 +55,12 @@ const Wrapper = styled.div`
       background: linear-gradient(to top left, #1c2b8f, #200725);
       padding: 0.5rem;
    }
+
+   /* .test {
+      background: orange;
+      opacity: 0.5;
+      height: 200%;
+   } */
 
    span {
       text-align: center;
@@ -93,7 +103,7 @@ const Wrapper = styled.div`
       font-size: 7.5rem;
       position: absolute;
       justify-self: center;
-      margin-top: 22.8rem;
+      margin-top: 22.6rem;
       background: orange;
       border-radius: 50%;
       opacity: 0.7;

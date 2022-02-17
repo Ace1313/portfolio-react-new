@@ -5,7 +5,6 @@ import javascriptIcon from '../assets/javascript.png';
 import htmlIcon from '../assets/html5.png';
 import cssIcon from '../assets/css-3.png';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
 
 function LandingPage() {
    let navigate = useNavigate();
@@ -16,37 +15,45 @@ function LandingPage() {
 
    return (
       <LandinPageWrapper>
-         <h1 className="name_text">
-            [ <span className="a_letter">A</span>LEKSANDER CADJO ]
-         </h1>
-         <h1 className="developer_text"> {'{FRONT-END WEB DEVELOPER}'} </h1>
-         <h2 className="skills_text">React . JavaScript . HTML . CSS . NODE.js</h2>
-         <div className="skills_icons">
-            <img src={reactIcon} />
-            <img src={javascriptIcon} />
-            <img src={htmlIcon} />
-            <img src={cssIcon} />
-            <img src={htmlIcon} />
+         <div className="container">
+            <h1 className="name_text">
+               [ <span className="a_letter">A</span>LEKSANDER CADJO ]
+            </h1>
+            <h1 className="developer_text"> {'{FRONT-END WEB DEVELOPER}'} </h1>
+            <h2 className="skills_text">
+               React . JavaScript . HTML . CSS . NODE.js
+            </h2>
+            <div className="skills_icons">
+               <img src={reactIcon} />
+               <img src={javascriptIcon} />
+               <img src={htmlIcon} />
+               <img src={cssIcon} />
+               <img src={htmlIcon} />
+            </div>
+            <button onClick={projectsHandler}>PROJECTS</button>
          </div>
-         <button onClick={projectsHandler}>PROJECTS</button>
       </LandinPageWrapper>
    );
 }
 
 const LandinPageWrapper = styled.div`
-   background-image: url(${backgroundImage});
-   height: 80vh;
-   display: grid;
-   grid-template-rows: 180px 100px 50px 150px 100px;
-   justify-content: center;
-   justify-items: center;
-   width: 50%;
-   margin: auto;
-   margin-top: 2rem;
-   padding: 1rem;
-   background-repeat: no-repeat;
-   background-position: center;
-   opacity: 0.8;
+   height: 100vh;
+
+   .container {
+      background-image: url(${backgroundImage});
+      height: 80vh;
+      display: grid;
+      grid-template-rows: 180px 100px 50px 150px 100px;
+      justify-content: center;
+      justify-items: center;
+      width: 50%;
+      margin: auto;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.8;
+   }
 
    .skills_text {
       letter-spacing: 6px;
@@ -70,7 +77,7 @@ const LandinPageWrapper = styled.div`
    }
 
    .developer_text {
-      font-size: 55px;
+      font-size: 54px;
       letter-spacing: 2.6px;
       background: #ff6348;
       background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
@@ -131,7 +138,9 @@ const LandinPageWrapper = styled.div`
    }
 
    @media screen and (max-width: 600px) {
-      width: 100%;
+      .container {
+         width: 100%;
+      }
 
       .developer_text {
          font-size: 18px;
