@@ -28,6 +28,7 @@ function Projects() {
                   </article>
                   <article className="tech">
                      <h2> {item.techStack.join(' - ')} </h2>
+                     <br />
                      <p>{item.decsription}</p>
                      <div className="links">
                         <a className="git" target="_blank" href={item.url}>
@@ -38,7 +39,9 @@ function Projects() {
                   </article>
                </main>
             ))}
-            {/* <div className="test"></div> */}
+            {/* <div className="test"></div>
+            <div className="test"></div>
+            <div className="test"></div> */}
          </section>
       </Wrapper>
    );
@@ -54,12 +57,14 @@ const Wrapper = styled.div`
       background: -moz-linear-gradient(bottom right, #2034b3, #18051c);
       background: linear-gradient(to top left, #1c2b8f, #200725);
       padding: 0.5rem;
+      justify-items: center;
    }
 
    /* .test {
-      background: orange;
       opacity: 0.5;
-      height: 200%;
+      height: 100%;
+      background: #fff200;
+      width: 100%;
    } */
 
    span {
@@ -68,7 +73,9 @@ const Wrapper = styled.div`
 
    .tech {
       display: grid;
+      grid-template-rows: 1fr 1fr;
       justify-items: center;
+      padding: 1rem;
    }
 
    p {
@@ -92,6 +99,7 @@ const Wrapper = styled.div`
       font-size: 55px;
       transition: all 0.2s ease-in-out;
       height: 0%;
+      padding: 2rem;
    }
 
    .links:hover {
@@ -100,10 +108,10 @@ const Wrapper = styled.div`
 
    .arrow {
       color: white;
-      font-size: 7.5rem;
+      font-size: 6rem;
       position: absolute;
       justify-self: center;
-      margin-top: 22.6rem;
+      margin-top: 22.5rem;
       background: orange;
       border-radius: 50%;
       opacity: 0.7;
@@ -117,20 +125,19 @@ const Wrapper = styled.div`
 
    .project_background {
       height: 70%;
-      width: 100%;
+      width: 97%;
       object-fit: cover;
       grid-column-start: 1;
       grid-column-end: 3;
-      border-radius: 50%;
+
       padding: 2rem;
       box-shadow: 0 20px 50px rgba(240, 46, 170, 0.7);
    }
 
    .main_card {
-      padding: 2rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 355px 355px;
+      grid-template-rows: 1fr;
       border: 2px solid;
       border-color: #ff6348;
       background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
@@ -139,6 +146,8 @@ const Wrapper = styled.div`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       justify-items: center;
+      align-items: center;
+      padding: 1rem;
    }
 
    .card_container1 {
