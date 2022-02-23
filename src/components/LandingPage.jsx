@@ -43,8 +43,11 @@ const LandinPageWrapper = styled.div`
 
    .btn-animation {
       position: relative;
-      color: #d4d0d3;
-      background: transparent;
+      background: -webkit-linear-gradient(to left, #ff6348 0%, #fff200 100%);
+      background: -moz-linear-gradient(to left, #ff6348 0%, #fff200 100%);
+      background: linear-gradient(to left, #ff6348 0%, #fff200 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       border: none;
       text-transform: uppercase;
       font-size: 48px;
@@ -57,8 +60,11 @@ const LandinPageWrapper = styled.div`
    }
 
    .btn-animation:hover {
-      background: #ff6348;
-      color: whitesmoke;
+      background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      background: -moz-linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      background: linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       box-shadow: 0 0 60px #ff6348;
       transition-delay: 0.3s;
    }
@@ -224,6 +230,12 @@ const LandinPageWrapper = styled.div`
          display: none;
       }
       button {
+      }
+
+      @media screen and (max-width: 600px) {
+         .btn-animation {
+            width: 100%;
+         }
       }
    }
 `;
