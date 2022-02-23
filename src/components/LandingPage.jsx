@@ -30,7 +30,9 @@ function LandingPage() {
                <img src={cssIcon} />
                <img src={htmlIcon} />
             </div>
-            <button onClick={projectsHandler}>PROJECTS</button>
+            <button className="btn-animation" onClick={projectsHandler}>
+               PROJECTS
+            </button>
          </div>
       </LandinPageWrapper>
    );
@@ -38,6 +40,68 @@ function LandingPage() {
 
 const LandinPageWrapper = styled.div`
    height: 100vh;
+
+   .btn-animation {
+      position: relative;
+      color: #d4d0d3;
+      background: transparent;
+      border: none;
+      text-transform: uppercase;
+      font-size: 48px;
+      transition: 0.5s;
+      overflow: hidden;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+      cursor: pointer;
+      font-weight: bolder;
+      width: 32%;
+   }
+
+   .btn-animation:hover {
+      background: #ff6348;
+      color: whitesmoke;
+      box-shadow: 0 0 60px #ff6348;
+      transition-delay: 0.3s;
+   }
+   .btn-animation::nth-child(1) {
+      filter: hue-rotate(115deg);
+   }
+   .btn-animation::nth-child(3) {
+      filter: hue-rotate(270deg);
+   }
+   .btn-animation:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-top: 5px solid #ff6348;
+      border-left: 5px solid #ff6348;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+   }
+   .btn-animation:hover:before {
+      width: 100%;
+      height: 100%;
+      transition-delay: 0s;
+   }
+   .btn-animation:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-bottom: 5px solid #ff6348;
+      border-right: 5px solid #ff6348;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+   }
+   .btn-animation:hover:after {
+      width: 100%;
+      height: 100%;
+      transition-delay: 0s;
+   }
 
    .container {
       background-image: url(${backgroundImage});

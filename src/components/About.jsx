@@ -54,16 +54,16 @@ function About() {
 const Wrapper = styled.div`
    .about_container {
       display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: 250px 400px 500px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 250px 400px 300px;
       justify-items: center;
    }
 
    .profile_img {
-      padding: 2rem;
+      padding: 3rem;
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: end;
    }
 
    img {
@@ -74,21 +74,27 @@ const Wrapper = styled.div`
    }
 
    h1 {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      grid-column-end: 3;
       text-decoration: underline;
       text-transform: uppercase;
       font-size: 8rem;
       letter-spacing: 4px;
-      background: purple;
       height: 8rem;
+      color: #f7ca77;
+      text-shadow: 0 0 7px #ffffff8f, 0 0 10px #fff, 0 0 21px #ffffff6e,
+         0 0 42px #fd974489, 0 0 82px #fd97449d, 0 0 92px #fd9744a6,
+         0 0 102px #fd974496, 0 0 151px #fd97447f;
    }
 
    .p_text {
       display: flex;
-      justify-content: center;
+      align-items: center;
    }
 
    p {
-      width: 25%;
+      width: 45%;
       text-align: start;
       font-size: 23px;
       letter-spacing: 0.5px;
@@ -98,11 +104,18 @@ const Wrapper = styled.div`
       padding: 2rem;
       font-size: 30px;
       display: flex;
-      flex-direction: column;
+      grid-column-start: 1;
+      grid-column-end: 3;
    }
 
    .heart {
       color: #ff7f50;
+   }
+
+   .heart:hover {
+      transform: translateY(-3px);
+      transition: all ease-out 0.3s;
+      color: red;
    }
    li {
       list-style: none;
@@ -122,20 +135,24 @@ const Wrapper = styled.div`
       p {
          text-align: start;
          font-size: 15px;
-         width: 70%;
+         width: 100%;
+         padding: 1rem;
       }
       img {
-         height: 200px;
-         width: 200px;
+         height: 180px;
+         width: 180px;
       }
       .like_text {
-         grid-row-start: 6;
+         grid-row-start: 3;
          font-size: 20px;
          justify-content: center;
+         flex-direction: column;
       }
       .profile_img {
          grid-row-start: 2;
          justify-content: center;
+         align-items: center;
+         padding: 1rem;
       }
    }
 `;
