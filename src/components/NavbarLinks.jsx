@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 function NavbarLinks() {
    return (
       <NavbarLinksWrapper>
          <li>
-            <a href="#">About</a>
+            <Link to="/">About</Link>
          </li>
          <li>
-            <a href="#">Projects</a>
+            <Link to="/projects">Projects</Link>
          </li>
          <li>
             <a href="#">Contact</a>

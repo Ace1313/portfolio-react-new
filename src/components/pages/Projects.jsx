@@ -100,10 +100,12 @@ const Wrapper = styled.div`
       transition: all 0.2s ease-in-out;
       height: 0%;
       padding: 2rem;
+      transition: transform 1s;
    }
 
    .links:hover {
       transform: scale(1.2);
+      transition: all ease-in-out 0.5s;
    }
 
    .arrow {

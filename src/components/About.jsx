@@ -6,7 +6,7 @@ import profile from '../assets/profilbild.png';
 function About() {
    return (
       <Wrapper>
-         <div className="about_container">
+         <div id="about-me" className="about_container">
             <h1>About me</h1>
             <div className="profile_img">
                <img src={profile} alt="" />

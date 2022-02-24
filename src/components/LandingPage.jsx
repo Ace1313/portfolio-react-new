@@ -31,7 +31,7 @@ function LandingPage() {
                <img src={htmlIcon} />
             </div>
             <button className="btn-animation" onClick={projectsHandler}>
-               PROJECTS
+               projects
             </button>
          </div>
       </LandinPageWrapper>
@@ -53,7 +53,7 @@ const LandinPageWrapper = styled.div`
       font-size: 48px;
       transition: 0.5s;
       overflow: hidden;
-      -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #00000090);
       cursor: pointer;
       font-weight: bolder;
       width: 32%;
@@ -67,13 +67,9 @@ const LandinPageWrapper = styled.div`
       -webkit-text-fill-color: transparent;
       box-shadow: 0 0 60px #ff6348;
       transition-delay: 0.3s;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #00000024);
    }
-   .btn-animation::nth-child(1) {
-      filter: hue-rotate(115deg);
-   }
-   .btn-animation::nth-child(3) {
-      filter: hue-rotate(270deg);
-   }
+
    .btn-animation:before {
       content: '';
       position: absolute;
