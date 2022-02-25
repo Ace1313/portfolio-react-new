@@ -33,7 +33,7 @@ function Contact() {
    }
    return (
       <Wrapper>
-         <h1>contact</h1>
+         <h1>Contact me</h1>
 
          <div className="icons">
             <span className="linked">
@@ -93,7 +93,7 @@ const Wrapper = styled.div`
 
    .email:hover {
       transition: all ease-in-out 1s;
-      transform: scale(1.2);
+      transform: scaleY(1.2);
       color: #e6e4e4;
    }
 

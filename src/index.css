@@ -10,7 +10,7 @@ body {
    background: -moz-linear-gradient(bottom right, #2034b3, #18051c);
    background: linear-gradient(to top left, #1c2b8f, #200725);
    background-repeat: no-repeat;
-
+   transition: all 0.5s linear;
    scroll-behavior: smooth;
 }
 

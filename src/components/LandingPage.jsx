@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import backgroundImage from '../assets/background.png';
-import reactIcon from '../assets/react.png';
-import javascriptIcon from '../assets/javascript.png';
-import htmlIcon from '../assets/html5.png';
-import cssIcon from '../assets/css-3.png';
+
 import { useNavigate } from 'react-router-dom';
 
 function LandingPage() {
@@ -23,13 +20,7 @@ function LandingPage() {
             <h2 className="skills_text">
                React . JavaScript . HTML . CSS . NODE.js
             </h2>
-            <div className="skills_icons">
-               <img src={reactIcon} />
-               <img src={javascriptIcon} />
-               <img src={htmlIcon} />
-               <img src={cssIcon} />
-               <img src={htmlIcon} />
-            </div>
+
             <button className="btn-animation" onClick={projectsHandler}>
                projects
             </button>

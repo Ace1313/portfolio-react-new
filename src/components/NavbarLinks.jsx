@@ -5,9 +5,6 @@ function NavbarLinks() {
    return (
       <NavbarLinksWrapper>
          <li>
-            <Link to="/">About</Link>
-         </li>
-         <li>
             <Link to="/projects">Projects</Link>
          </li>
          <li>
@@ -21,7 +18,8 @@ const NavbarLinksWrapper = styled.ul`
    display: flex;
    list-style: none;
    width: 30%;
-   justify-content: space-around;
+   justify-content: space-evenly;
+   padding: 0rem 2rem 0rem 2rem;
 
    @media screen and (max-width: 600px) {
       width: 100%;
