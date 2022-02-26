@@ -1,12 +1,23 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import projects from '../../assets/projects.jpg';
 import { projectObjects } from '../../projectData';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
-import naruto from '../../assets/naruto.jpg';
 import Navbar from '../Navbar';
 
 function Projects() {
+   const [test, setTest] = useState(0);
+   function testing() {
+      const position = window.scrollY;
+      setTest(position);
+   }
+
+   console.log(test);
+
+   useEffect(() => {
+      window.addEventListener('scroll', testing);
+   }, []);
    return (
       <Wrapper>
          <Navbar />
@@ -18,7 +29,11 @@ function Projects() {
             {projectObjects.map((item) => (
                <main
                   id="projectsLink"
-                  className={`main_card card_container${item.id}`}
+                  className={
+                     test > 390
+                        ? `main_card card_container${item.id} show-main`
+                        : 'hide-main'
+                  }
                   key={item.id}
                >
                   <article className="card">
@@ -39,9 +54,6 @@ function Projects() {
                   </article>
                </main>
             ))}
-            {/* <div className="test"></div>
-            <div className="test"></div>
-            <div className="test"></div> */}
          </section>
       </Wrapper>
    );
@@ -60,12 +72,44 @@ const Wrapper = styled.div`
       justify-items: center;
    }
 
-   /* .test {
-      opacity: 0.5;
-      height: 100%;
-      background: #fff200;
-      width: 100%;
-   } */
+   .show-main {
+      opacity: 1;
+      transition: 3.5s;
+      animation-name: slideIn;
+      animation-duration: 3.5s;
+      /* border: 2px solid; */
+   }
+
+   .hide-main {
+      opacity: 0;
+      transition: 3.5s;
+      animation-name: slideOut;
+      animation-duration: 3.5s;
+   }
+
+   @keyframes slideIn {
+      from {
+         margin-right: 190%;
+         width: 100%;
+      }
+
+      to {
+         margin-left: 0.2%;
+         width: 100%;
+      }
+   }
+
+   @keyframes slideOut {
+      from {
+         margin-left: 34%;
+         width: 50%;
+      }
+
+      to {
+         margin-right: 190%;
+         width: 60%;
+      }
+   }
 
    span {
       text-align: center;
@@ -131,7 +175,6 @@ const Wrapper = styled.div`
       object-fit: cover;
       grid-column-start: 1;
       grid-column-end: 3;
-
       padding: 2rem;
       box-shadow: 0 20px 50px rgba(240, 46, 170, 0.7);
    }
@@ -140,7 +183,7 @@ const Wrapper = styled.div`
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
-      border: 2px solid;
+
       border-color: #ff6348;
       background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
       background: -moz-linear-gradient(to right, #ff6348 0%, #fff200 100%);
@@ -211,6 +254,7 @@ const Wrapper = styled.div`
       .container {
          display: grid;
          grid-template-rows: 1fr 1fr 1fr;
+         grid-template-columns: none;
          padding: 0rem;
       }
       .main_card {
@@ -233,6 +277,13 @@ const Wrapper = styled.div`
       }
       .arrow {
          display: none;
+      }
+      .show-main {
+         animation: none;
+      }
+      .hide-main {
+         animation: none;
+         grid-column-start: 1;
       }
    }
 `;

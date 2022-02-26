@@ -9,17 +9,17 @@ import cssIcon from '../assets/css-3.png';
 import naruto from '../assets/naruto.jpg';
 
 function About() {
-   const [test, setTest] = useState(0);
+   // const [test, setTest] = useState(0);
    const [newTest, setNewTest] = useState(naruto);
 
-   function testing() {
-      const position = window.scrollY;
-      setTest(position);
-   }
+   // function testing() {
+   //    const position = window.scrollY;
+   //    setTest(position);
+   // }
 
-   useEffect(() => {
-      window.addEventListener('scroll', testing);
-   }, []);
+   // useEffect(() => {
+   //    window.addEventListener('scroll', testing);
+   // }, []);
 
    return (
       <Wrapper>
@@ -70,9 +70,9 @@ function About() {
                <img className="icons-img" src={htmlIcon} alt="" />
                <img className="icons-img" src={cssIcon} alt="" />
             </div>
-            <div className={test > 1400 ? 'show-naruto' : 'hide-naruto'}>
+            {/* <div className={test > 1400 ? 'show-naruto' : 'hide-naruto'}>
                <img className="naruto" src={naruto} alt="" />
-            </div>
+            </div> */}
          </div>
       </Wrapper>
    );
@@ -85,20 +85,48 @@ const Wrapper = styled.div`
       grid-template-rows: 250px 400px 100px 400px 200px;
       justify-items: center;
    }
-
+   /* 
    .naruto {
       height: 200px;
    }
 
    .show-naruto {
       opacity: 1;
-      transition: 5s;
+      transition: 3s;
+      animation-name: narutoImg;
+      animation-duration: 3s;
    }
 
    .hide-naruto {
       opacity: 0;
-      transition: 5s;
+      transition: 3s;
+      animation-name: narutoImgHide;
+      animation-duration: 3s;
    }
+
+   @keyframes narutoImg {
+      from {
+         margin-left: 100%;
+         width: 200%;
+      }
+
+      to {
+         margin-left: 84%;
+         width: 100%;
+      }
+   }
+
+   @keyframes narutoImgHide {
+      from {
+         margin-left: 84%;
+         width: 100%;
+      }
+
+      to {
+         margin-right: 100%;
+         width: 200%;
+      }
+   } */
 
    .profile_img {
       padding: 3rem;
@@ -225,9 +253,6 @@ const Wrapper = styled.div`
       .icons-img {
          width: 50px;
          height: 50px;
-      }
-      .naruto {
-         display: none;
       }
    }
 `;
