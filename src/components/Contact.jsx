@@ -45,10 +45,7 @@ function Contact() {
                </a>
             </span>
             <span className="linked">
-               <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/aleksander-cadjo-017790205/"
-               >
+               <a target="_blank" href="https://github.com/Ace1313">
                   <BsGithub />
                </a>
             </span>
