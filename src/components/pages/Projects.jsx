@@ -178,7 +178,6 @@ const Wrapper = styled.div`
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
-
       border-color: #ff6348;
       background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
       background: -moz-linear-gradient(to right, #ff6348 0%, #fff200 100%);

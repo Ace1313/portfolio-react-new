@@ -35,10 +35,12 @@ function Contact() {
       <Wrapper>
          <h1>Contact me</h1>
 
-         <div className="icons">
-            <span className="linked">
-               <BsLinkedin />
-            </span>
+         <div id="contact" className="icons">
+            <button className="linked">
+               <a href="">
+                  <BsLinkedin />
+               </a>
+            </button>
 
             <span
                className="email"
@@ -87,24 +89,28 @@ const Wrapper = styled.div`
       justify-content: space-evenly;
    }
 
+   button {
+      background: transparent;
+      border: none;
+      font-size: 40px;
+   }
+
    .email {
       transition: transform 2.5s;
+      color: white;
    }
 
    .email:hover {
       transition: all ease-in-out 1s;
       transform: scaleY(1.2);
-      color: #e6e4e4;
-   }
-
-   .linked {
-      transition: transform 2.5s;
+      color: black;
    }
 
    .linked:hover {
       transition: all ease-in-out 1s;
       transform: scale(1.2);
       color: #e6e4e4;
+      cursor: pointer;
    }
 
    .message {
@@ -112,6 +118,14 @@ const Wrapper = styled.div`
       justify-content: flex-end;
       margin-right: 29%;
       padding: 1rem 0rem 1rem 0rem;
+   }
+   a {
+      color: white;
+      transition: transform 2.5s;
+   }
+
+   a:hover {
+      color: black;
    }
 
    span {

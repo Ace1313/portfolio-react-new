@@ -50,7 +50,7 @@ function About() {
             >
                <span>
                   <BsHeartFill className="heart" />
-                  <span className="span_heart">Programming</span>
+                  <span className="span_heart">Coding</span>
                </span>
                <span>
                   <BsHeartFill className="heart" />
@@ -62,11 +62,15 @@ function About() {
                </span>
                <span>
                   <BsHeartFill className="heart" />
-                  <span className="span_heart">Dogs</span>
+                  <span className="span_heart">Anime</span>
+               </span>
+               <span>
+                  <BsHeartFill className="heart" />
+                  <span className="span_heart">Movies</span>
                </span>
             </div>
 
-            <div className={test > 1140 ? 'show-icons icons ' : 'hide-icons icons '}>
+            <div className={test > 1280 ? 'show-icons icons ' : 'hide-icons icons '}>
                <h2>What im learning</h2>
                <img className="icons-img react " src={reactIcon} alt="" />
                <img className="icons-img" src={javascriptIcon} alt="" />
@@ -212,7 +216,7 @@ const Wrapper = styled.div`
    }
 
    .start-animtaion {
-      animation: typewriter 2s steps(44) 1s 1 normal both;
+      animation: typewriter 2s steps(44) 1s normal both;
    }
 
    @keyframes typewriter {
@@ -220,7 +224,7 @@ const Wrapper = styled.div`
          width: 1%;
       }
       to {
-         width: 36%;
+         width: 41%;
       }
    }
 
@@ -246,6 +250,7 @@ const Wrapper = styled.div`
       }
       h2 {
          padding: 1rem 0rem 1rem 0rem;
+         font-size: 30px;
       }
       h1 {
          font-size: 4rem;
@@ -277,7 +282,7 @@ const Wrapper = styled.div`
             width: 1%;
          }
          to {
-            width: 46%;
+            width: 35%;
          }
       }
 

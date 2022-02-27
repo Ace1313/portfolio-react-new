@@ -8,7 +8,7 @@ function NavbarLinks() {
             <Link to="/projects">Projects</Link>
          </li>
          <li>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
          </li>
       </NavbarLinksWrapper>
    );
@@ -20,6 +20,12 @@ const NavbarLinksWrapper = styled.ul`
    width: 30%;
    justify-content: space-evenly;
    padding: 0rem 2rem 0rem 2rem;
+
+   a {
+      color: #6b0b0b;
+      text-decoration: none;
+      font-size: 20px;
+   }
 
    @media screen and (max-width: 600px) {
       width: 100%;

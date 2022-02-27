@@ -33,9 +33,9 @@ const LandinPageWrapper = styled.div`
 
    .btn-animation {
       position: relative;
-      background: -webkit-linear-gradient(to left, #ff6348 0%, #fff200 100%);
-      background: -moz-linear-gradient(to left, #ff6348 0%, #fff200 100%);
-      background: linear-gradient(to left, #ff6348 0%, #fff200 100%);
+      background: -webkit-linear-gradient(to left, #5f27cd 10%, #218c74 100%);
+      background: -moz-linear-gradient(to left, #5f27cd 10%, #218c74 100%);
+      background: linear-gradient(to left, #5f27cd 10%, #218c74 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       border: none;
@@ -67,8 +67,8 @@ const LandinPageWrapper = styled.div`
       left: 0;
       width: 10px;
       height: 10px;
-      border-top: 5px solid #ff6348;
-      border-left: 5px solid #ff6348;
+      border-top: 5px solid #48ff85;
+      border-left: 5px solid #48ff85;
       transition: 0.5s;
       transition-delay: 0.5s;
    }
@@ -144,10 +144,10 @@ const LandinPageWrapper = styled.div`
    }
 
    .name_text {
-      font-size: 50px;
+      font-size: 58px;
       letter-spacing: 6px;
       color: whitesmoke;
-      animation: flicker 4s linear infinite, glow 4500ms linear infinite 4000ms;
+      animation: flicker 4s linear infinite, glow 6500ms linear infinite 4000ms;
    }
 
    @keyframes glow {
