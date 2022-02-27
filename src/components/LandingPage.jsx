@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import backgroundImage from '../assets/background.png';
-
+import backgroundPhone from '../assets/background-phone.png';
 import { useNavigate } from 'react-router-dom';
 
 function LandingPage() {
@@ -133,7 +133,7 @@ const LandinPageWrapper = styled.div`
    }
 
    .developer_text {
-      font-size: 54px;
+      font-size: 63px;
       letter-spacing: 2.6px;
       background: #ff6348;
       background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
@@ -144,7 +144,7 @@ const LandinPageWrapper = styled.div`
    }
 
    .name_text {
-      font-size: 58px;
+      font-size: 60px;
       letter-spacing: 6px;
       color: whitesmoke;
       animation: flicker 4s linear infinite, glow 6500ms linear infinite 4000ms;
@@ -196,10 +196,11 @@ const LandinPageWrapper = styled.div`
    @media screen and (max-width: 600px) {
       .container {
          width: 100%;
+         background-image: url(${backgroundPhone});
       }
 
       .developer_text {
-         font-size: 18px;
+         font-size: 20px;
          font-weight: bolder;
       }
       .name_text {
@@ -209,14 +210,15 @@ const LandinPageWrapper = styled.div`
          letter-spacing: 2px;
       }
       .skills_text {
-         font-size: 18px;
+         font-size: 15px;
          letter-spacing: 2px;
       }
       .skills_icons {
          display: none;
       }
       .btn-animation {
-         width: 100%;
+         width: 40%;
+         font-size: 20px;
       }
    }
 `;

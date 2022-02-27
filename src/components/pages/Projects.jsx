@@ -48,7 +48,7 @@ function Projects() {
                            {<BsGithub />}
                         </a>
                      </div>
-                     <span>Click link to see Github</span>
+                     <span>To see code follow Gitbub link</span>
                   </article>
                </main>
             ))}
