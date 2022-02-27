@@ -66,7 +66,7 @@ const Wrapper = styled.div`
    grid-template-rows: 60px 40px 30px 20px;
    padding: 2rem;
    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-   border: 20px dotted;
+   border: 18px dotted;
    border-color: #ff6348;
    background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
    background: -moz-linear-gradient(to right, #ff6348 0%, #fff200 100%);

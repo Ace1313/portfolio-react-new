@@ -10,10 +10,13 @@ import naruto from '../assets/naruto.jpg';
 
 function About() {
    const [test, setTest] = useState(0);
+   const [startAnimation, setStartAnimation] = useState(0);
 
    function testing() {
       const position = window.scrollY;
+      const positionAnimation = window.scrollY;
       setTest(position);
+      setStartAnimation(positionAnimation);
    }
 
    console.log(test);
@@ -38,31 +41,29 @@ function About() {
                   become a developer with focus on react and javascript.
                </p>
             </div>
-            <div className="like_text">
-               <li>
-                  <span>
-                     <BsHeartFill className="heart" />
-                     <span className="span_heart">Programming</span>
-                  </span>
-               </li>
-               <li>
-                  <span>
-                     <BsHeartFill className="heart" />
-                     <span className="span_heart">Gaming</span>
-                  </span>
-               </li>
-               <li>
-                  <span>
-                     <BsHeartFill className="heart" />
-                     <span className="span_heart">Udemy</span>
-                  </span>
-               </li>
-               <li>
-                  <span>
-                     <BsHeartFill className="heart" />
-                     <span className="span_heart">Dogs</span>
-                  </span>
-               </li>
+            <div
+               className={
+                  startAnimation > 1000
+                     ? 'start-animtaion like_text'
+                     : 'hide-like-text'
+               }
+            >
+               <span>
+                  <BsHeartFill className="heart" />
+                  <span className="span_heart">Programming</span>
+               </span>
+               <span>
+                  <BsHeartFill className="heart" />
+                  <span className="span_heart">Gaming</span>
+               </span>
+               <span>
+                  <BsHeartFill className="heart" />
+                  <span className="span_heart">Udemy</span>
+               </span>
+               <span>
+                  <BsHeartFill className="heart" />
+                  <span className="span_heart">Dogs</span>
+               </span>
             </div>
 
             <div className={test > 1140 ? 'show-icons icons ' : 'hide-icons icons '}>
@@ -78,10 +79,13 @@ function About() {
 }
 
 const Wrapper = styled.div`
+   .test img {
+      height: 450px;
+   }
    .about_container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 250px 400px 100px 400px 200px;
+      grid-template-rows: 250px 400px 100px 600px 100px;
       justify-items: center;
    }
 
@@ -97,9 +101,19 @@ const Wrapper = styled.div`
 
    h2 {
       font-size: 35px;
-      border-bottom: 2px solid orange;
-      border-top: 2px solid orange;
+      border-bottom: 3px solid #ccdbe8;
+      border-top: 3px solid #ccdbe8;
       padding: 1rem;
+      text-transform: uppercase;
+      background: #ff6348;
+      background: -webkit-linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      background: -moz-linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      background: linear-gradient(to right, #ff6348 0%, #fff200 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      box-shadow: #ccdbe8 3px 3px 6px 0px inset,
+         rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      border-radius: 5px;
    }
 
    .profile_img {
@@ -130,12 +144,12 @@ const Wrapper = styled.div`
       grid-column-start: 1;
       grid-column-end: 3;
       grid-row-start: 4;
-      padding: 2rem;
+      padding: 1rem;
    }
 
    .icons-img {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
    }
 
    .profile-img {
@@ -180,8 +194,34 @@ const Wrapper = styled.div`
       display: flex;
       grid-column-start: 1;
       grid-column-end: 3;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      white-space: nowrap;
+      overflow: hidden;
+   }
+
+   .hide-like-text {
+      opacity: 0;
+      border-radius: 5px;
+      border-bottom: solid 2px transparent;
+      padding: 2rem;
+      font-size: 30px;
+      display: flex;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      white-space: nowrap;
+      overflow: hidden;
+   }
+
+   .start-animtaion {
+      animation: typewriter 2s steps(44) 1s 1 normal both;
+   }
+
+   @keyframes typewriter {
+      from {
+         width: 1%;
+      }
+      to {
+         width: 36%;
+      }
    }
 
    .heart {
@@ -193,10 +233,7 @@ const Wrapper = styled.div`
       transition: all ease-out 0.3s;
       color: red;
    }
-   li {
-      list-style: none;
-      padding: 0.5rem;
-   }
+
    .span_heart {
       padding: 1rem;
    }
@@ -205,6 +242,7 @@ const Wrapper = styled.div`
       .about_container {
          display: grid;
          grid-template-columns: none;
+         grid-template-rows: 250px 300px 100px 200px 400px;
       }
       h2 {
          padding: 1rem 0rem 1rem 0rem;
@@ -234,6 +272,18 @@ const Wrapper = styled.div`
          box-shadow: none;
          height: 200px;
       }
+      @keyframes typewriter {
+         from {
+            width: 1%;
+         }
+         to {
+            width: 46%;
+         }
+      }
+
+      .hide-like-text {
+         width: 0%;
+      }
       .profile_img {
          grid-row-start: 2;
          justify-content: center;
@@ -244,13 +294,12 @@ const Wrapper = styled.div`
       .icons {
          grid-row-start: 5;
          grid-column-start: 1;
-         height: 30px;
          padding: 1rem;
       }
 
       .icons-img {
-         width: 50px;
-         height: 50px;
+         width: 60px;
+         height: 60px;
       }
    }
 `;

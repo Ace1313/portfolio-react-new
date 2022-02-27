@@ -52,25 +52,12 @@ function Projects() {
                   </article>
                </main>
             ))}
-            <div className="test">
-               <img src="" alt="" />
-            </div>
          </section>
       </Wrapper>
    );
 }
 
 const Wrapper = styled.div`
-   .test {
-      height: 100%;
-      width: 100%;
-      background: transparent;
-   }
-
-   .test img {
-      background-color: transparent;
-      height: 150px;
-   }
    .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
