@@ -20,7 +20,6 @@ function LandingPage() {
             <h2 className="skills_text">
                React . JavaScript . HTML . CSS . NODE.js
             </h2>
-
             <button className="btn-animation" onClick={projectsHandler}>
                projects
             </button>
@@ -100,7 +99,7 @@ const LandinPageWrapper = styled.div`
       background-image: url(${backgroundImage});
       height: 80vh;
       display: grid;
-      grid-template-rows: 180px 100px 50px 150px 100px;
+      grid-template-rows: 180px 100px 100px 150px;
       justify-content: center;
       justify-items: center;
       width: 50%;
@@ -216,13 +215,8 @@ const LandinPageWrapper = styled.div`
       .skills_icons {
          display: none;
       }
-      button {
-      }
-
-      @media screen and (max-width: 600px) {
-         .btn-animation {
-            width: 100%;
-         }
+      .btn-animation {
+         width: 100%;
       }
    }
 `;

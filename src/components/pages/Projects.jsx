@@ -7,13 +7,11 @@ import { BsGithub } from 'react-icons/bs';
 import Navbar from '../Navbar';
 
 function Projects() {
-   const [test, setTest] = useState(0);
+   const [inView, setInVeiw] = useState(0);
    function testing() {
       const position = window.scrollY;
-      setTest(position);
+      setInVeiw(position);
    }
-
-   console.log(test);
 
    useEffect(() => {
       window.addEventListener('scroll', testing);
@@ -30,9 +28,9 @@ function Projects() {
                <main
                   id="projectsLink"
                   className={
-                     test > 390
+                     inView > 460
                         ? `main_card card_container${item.id} show-main`
-                        : 'hide-main'
+                        : ' main_card card_container${item.id} hide-main'
                   }
                   key={item.id}
                >
@@ -54,20 +52,30 @@ function Projects() {
                   </article>
                </main>
             ))}
+            <div className="test">
+               <img src="" alt="" />
+            </div>
          </section>
       </Wrapper>
    );
 }
 
 const Wrapper = styled.div`
+   .test {
+      height: 100%;
+      width: 100%;
+      background: transparent;
+   }
+
+   .test img {
+      background-color: transparent;
+      height: 150px;
+   }
    .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 480px 480px 480px;
-      background: #3a4fda;
-      background: -webkit-linear-gradient(bottom right, #2034b3, #18051c);
-      background: -moz-linear-gradient(bottom right, #2034b3, #18051c);
-      background: linear-gradient(to top left, #1c2b8f, #200725);
+
       padding: 0.5rem;
       justify-items: center;
    }
@@ -82,9 +90,9 @@ const Wrapper = styled.div`
 
    .hide-main {
       opacity: 0;
-      transition: 3.5s;
+      transition: 2s;
       animation-name: slideOut;
-      animation-duration: 3.5s;
+      animation-duration: 2s;
    }
 
    @keyframes slideIn {
@@ -101,13 +109,13 @@ const Wrapper = styled.div`
 
    @keyframes slideOut {
       from {
-         margin-left: 34%;
-         width: 50%;
+         margin-left: 0.2%;
+         width: 100%;
       }
 
       to {
          margin-right: 190%;
-         width: 60%;
+         width: 100%;
       }
    }
 

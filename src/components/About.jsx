@@ -9,17 +9,18 @@ import cssIcon from '../assets/css-3.png';
 import naruto from '../assets/naruto.jpg';
 
 function About() {
-   // const [test, setTest] = useState(0);
-   const [newTest, setNewTest] = useState(naruto);
+   const [test, setTest] = useState(0);
 
-   // function testing() {
-   //    const position = window.scrollY;
-   //    setTest(position);
-   // }
+   function testing() {
+      const position = window.scrollY;
+      setTest(position);
+   }
 
-   // useEffect(() => {
-   //    window.addEventListener('scroll', testing);
-   // }, []);
+   console.log(test);
+
+   useEffect(() => {
+      window.addEventListener('scroll', testing);
+   }, []);
 
    return (
       <Wrapper>
@@ -63,16 +64,14 @@ function About() {
                   </span>
                </li>
             </div>
-            <div className="icons">
+
+            <div className={test > 1140 ? 'show-icons icons ' : 'hide-icons icons '}>
                <h2>What im learning</h2>
-               <img className="icons-img" src={reactIcon} alt="" />
+               <img className="icons-img react " src={reactIcon} alt="" />
                <img className="icons-img" src={javascriptIcon} alt="" />
                <img className="icons-img" src={htmlIcon} alt="" />
                <img className="icons-img" src={cssIcon} alt="" />
             </div>
-            {/* <div className={test > 1400 ? 'show-naruto' : 'hide-naruto'}>
-               <img className="naruto" src={naruto} alt="" />
-            </div> */}
          </div>
       </Wrapper>
    );
@@ -85,54 +84,42 @@ const Wrapper = styled.div`
       grid-template-rows: 250px 400px 100px 400px 200px;
       justify-items: center;
    }
-   /* 
-   .naruto {
-      height: 200px;
-   }
 
-   .show-naruto {
+   .show-icons {
       opacity: 1;
       transition: 3s;
-      animation-name: narutoImg;
-      animation-duration: 3s;
    }
 
-   .hide-naruto {
+   .hide-icons {
       opacity: 0;
-      transition: 3s;
-      animation-name: narutoImgHide;
-      animation-duration: 3s;
+      transition: 1s;
    }
 
-   @keyframes narutoImg {
-      from {
-         margin-left: 100%;
-         width: 200%;
-      }
-
-      to {
-         margin-left: 84%;
-         width: 100%;
-      }
+   h2 {
+      font-size: 35px;
+      border-bottom: 2px solid orange;
+      border-top: 2px solid orange;
+      padding: 1rem;
    }
-
-   @keyframes narutoImgHide {
-      from {
-         margin-left: 84%;
-         width: 100%;
-      }
-
-      to {
-         margin-right: 100%;
-         width: 200%;
-      }
-   } */
 
    .profile_img {
       padding: 3rem;
       width: 100%;
       display: flex;
       justify-content: end;
+   }
+
+   .react {
+      animation: rotation 10s infinite linear;
+   }
+
+   @keyframes rotation {
+      from {
+         transform: rotate(0deg);
+      }
+      to {
+         transform: rotate(360deg);
+      }
    }
 
    .icons {
@@ -186,11 +173,15 @@ const Wrapper = styled.div`
    }
 
    .like_text {
+      border-radius: 5px;
+      border-bottom: solid 2px transparent;
       padding: 2rem;
       font-size: 30px;
       display: flex;
       grid-column-start: 1;
       grid-column-end: 3;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
    }
 
    .heart {
@@ -211,6 +202,13 @@ const Wrapper = styled.div`
    }
 
    @media screen and (max-width: 600px) {
+      .about_container {
+         display: grid;
+         grid-template-columns: none;
+      }
+      h2 {
+         padding: 1rem 0rem 1rem 0rem;
+      }
       h1 {
          font-size: 4rem;
          background: none;
@@ -227,27 +225,27 @@ const Wrapper = styled.div`
       .p_text {
          grid-column-start: 1;
       }
-      img {
-         height: 180px;
-         width: 180px;
-      }
+
       .like_text {
          grid-row-start: 4;
          font-size: 20px;
          justify-content: center;
          flex-direction: column;
+         box-shadow: none;
+         height: 200px;
       }
       .profile_img {
          grid-row-start: 2;
          justify-content: center;
          align-items: center;
          padding: 1rem;
+         height: 150px;
       }
       .icons {
          grid-row-start: 5;
          grid-column-start: 1;
-         flex-direction: row;
-         padding: 2rem;
+         height: 30px;
+         padding: 1rem;
       }
 
       .icons-img {

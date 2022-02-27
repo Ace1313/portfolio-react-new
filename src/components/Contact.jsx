@@ -117,6 +117,13 @@ const Wrapper = styled.div`
    span {
       cursor: pointer;
    }
+   @media screen and (max-width: 600px) {
+      h1 {
+         font-size: 2rem;
+      }
+      border: 15px dotted orange;
+      height: 0%;
+   }
 `;
 
 export default Contact;
