@@ -244,7 +244,7 @@ const Wrapper = styled.div`
       color: black;
    }
 
-   @media all and (max-width: 400px) {
+   @media all and (max-width: 600px) {
       .container {
          display: grid;
          grid-template-rows: 1fr 1fr 1fr;
