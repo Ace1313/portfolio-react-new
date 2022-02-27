@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { BsLinkedin, BsClipboard } from 'react-icons/bs';
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
 
 function Contact() {
@@ -36,11 +36,22 @@ function Contact() {
          <h1>Contact me</h1>
 
          <div id="contact" className="icons">
-            <button className="linked">
-               <a href="">
+            <span className="linked">
+               <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/aleksander-cadjo-017790205/"
+               >
                   <BsLinkedin />
                </a>
-            </button>
+            </span>
+            <span className="linked">
+               <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/aleksander-cadjo-017790205/"
+               >
+                  <BsGithub />
+               </a>
+            </span>
 
             <span
                className="email"
@@ -51,7 +62,6 @@ function Contact() {
                <FiMail />
             </span>
          </div>
-
          <p className="message">
             {copySuccessMessage} {instructions}
          </p>
@@ -60,13 +70,11 @@ function Contact() {
 }
 
 const Wrapper = styled.div`
-   background: #444343;
-   height: 40vh;
    width: 98%;
    margin: auto;
    display: grid;
-   grid-template-rows: 60px 40px 30px 20px;
-   padding: 2rem;
+   grid-template-rows: 60px 180px 40px;
+   padding: 1.5rem;
    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
    border: 18px dotted;
    border-color: #ff6348;
@@ -87,12 +95,10 @@ const Wrapper = styled.div`
       font-size: 40px;
       display: flex;
       justify-content: space-evenly;
-   }
-
-   button {
-      background: transparent;
-      border: none;
-      font-size: 40px;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      padding: 1rem;
    }
 
    .email {
@@ -115,8 +121,7 @@ const Wrapper = styled.div`
 
    .message {
       display: flex;
-      justify-content: flex-end;
-      margin-right: 29%;
+      justify-content: center;
       padding: 1rem 0rem 1rem 0rem;
    }
    a {
@@ -131,6 +136,7 @@ const Wrapper = styled.div`
    span {
       cursor: pointer;
    }
+
    @media screen and (max-width: 600px) {
       h1 {
          font-size: 2rem;
